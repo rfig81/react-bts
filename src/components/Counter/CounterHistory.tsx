@@ -23,9 +23,10 @@ export default function CounterHistory({ history }: { history: number[] }) {
 
   return (
     <ol>
-      {history.map((count, index) => (
-        <HistoryItem key={index} count={count} />
-      ))}
+      {history.map((count) => {
+        const key = Math.random() * 100;
+        return <HistoryItem key={key} count={count} />;
+      })}
     </ol>
   );
 }
